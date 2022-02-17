@@ -7,6 +7,7 @@ namespace Home
 {
     using DefaultUI;
     using DefaultSystem;
+    using StaticData;
 
     public class HomeManager : MonoBehaviour
     {
@@ -19,7 +20,7 @@ namespace Home
 
         private void Awake()
         {
-            // 스토리 데이터 리딩 (한 번만)
+            StoryStaticData.ReadData();
             if (!PlayerSaveData.Load())
             {
                 // 이름 입력 이벤트 출력
