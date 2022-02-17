@@ -23,7 +23,7 @@ namespace Story
         public void ShowSlot(string message)
         {
             this.gameObject.SetActive(true);
-            _text.text = message;
+            _text.text = message.Replace("{n}", DefaultSystem.PlayerSaveData.GetPlayer.Name);
         }
 
         public void OffSlot()

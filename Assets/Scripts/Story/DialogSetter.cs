@@ -20,7 +20,7 @@ namespace Story
         public void SetDialog(string name, string dialog)
         {
             _name.text = name;
-            _dialog.text = dialog;
+            dialog = dialog.Replace("{n}", DefaultSystem.PlayerSaveData.GetPlayer.Name);
             float duration = dialog.Length * 0.1f / _dialogShowingSpeed;
             _dialogAnimation = _dialog.DOText(dialog, duration).From("").target;
         }
