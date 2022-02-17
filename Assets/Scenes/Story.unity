@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e23d05b96e7a4b338bd91fd9c332236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogShowingSpeed: 3
+  _dialogShowingSpeed: 2
   _name: {fileID: 145471229}
   _dialog: {fileID: 2143074814}
 --- !u!1 &625495238
