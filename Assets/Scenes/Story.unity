@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68b53b2fd57041639d54780f84594c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loader: {fileID: 1565516642}
   _dialogSetter: {fileID: 551297196}
 --- !u!4 &288390392
 Transform:
@@ -1240,6 +1241,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f568a4d33742497a864f73e81afd0eb, type: 3}
+--- !u!114 &1565516642 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1318806236581991860, guid: 0f568a4d33742497a864f73e81afd0eb, type: 3}
+  m_PrefabInstance: {fileID: 1565516641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02821244a969747859a665df158b3181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1799934515
 GameObject:
   m_ObjectHideFlags: 0

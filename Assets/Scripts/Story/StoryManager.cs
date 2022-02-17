@@ -6,13 +6,17 @@ namespace Story
 {
     using StaticData;
     using Models.Story;
+    using DefaultUI;
 
     public class StoryManager : MonoBehaviour
     {
         [SerializeField]
+        private SceneLoader _loader;
+        [SerializeField]
         private DialogSetter _dialogSetter;
         private List<ScenarioLine> _scenarioList;
         private int _pin;
+        private bool _isOnLoading;
 
         private void Awake()
         {
@@ -23,6 +27,7 @@ namespace Story
         private void ShowScenario(int id)
         {
             _scenarioList = StoryStaticData.GetScenario(id);
+            _isOnLoading = false;
             _pin = 0;
             ReadScenario();
         }
@@ -33,6 +38,7 @@ namespace Story
             switch (line.Code)
             {
                 case "SET":
+                    Next();
                     break;
                 case "TALK":
                     _dialogSetter.SetDialog(line.Info, line.Contents);
@@ -42,10 +48,23 @@ namespace Story
             }
         }
 
+        private void EndScenario()
+        {
+            if (_isOnLoading) return;
+            _loader.Load(SceneName.Home);
+        }
+
         public void Next()
         {
             _pin++;
-            ReadScenario();
+            if (_scenarioList.Count <= _pin)
+            {
+                EndScenario();
+            }
+            else
+            {
+                ReadScenario();
+            }
         }
     }
 }
