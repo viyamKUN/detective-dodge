@@ -45,5 +45,10 @@ namespace Home
         {
             _loader.Load(SceneName.Game);
         }
+
+        public void StoryStart()
+        {
+            _loader.Load(SceneName.Story);
+        }
     }
 }
