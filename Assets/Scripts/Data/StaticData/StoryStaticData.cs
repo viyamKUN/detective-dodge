@@ -28,5 +28,10 @@ namespace StaticData
                 }
             }
         }
+
+        public static List<ScenarioLine> GetScenario(int scenarioNumber)
+        {
+            return _scenarios[scenarioNumber];
+        }
     }
 }
