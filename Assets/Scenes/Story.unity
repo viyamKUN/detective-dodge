@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 288390392}
   - component: {fileID: 288390391}
+  - component: {fileID: 288390393}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -288,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loader: {fileID: 1565516642}
   _dialogSetter: {fileID: 551297196}
+  _standingSetter: {fileID: 793199383}
 --- !u!4 &288390392
 Transform:
   m_ObjectHideFlags: 0
@@ -302,6 +304,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &288390393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288390390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e61b07d405d4f9890060526f357c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _standingAssets:
+  - Name: "\uC81C\uD504\uB9AC"
+    StandingSprite: {fileID: 21300000, guid: 1fd542c671c584814962e8cad6d9923c, type: 3}
+  - Name: "\uC5D8\uB808\uB098"
+    StandingSprite: {fileID: 21300000, guid: 79869b3e95fe34344bd349c8507b3481, type: 3}
+  - Name: "\uC544\uB860"
+    StandingSprite: {fileID: 21300000, guid: e729927b0ad904b8da1887350473d083, type: 3}
+  - Name: "\uAC00\uBE0C\uB810\uB77C"
+    StandingSprite: {fileID: 21300000, guid: e729927b0ad904b8da1887350473d083, type: 3}
+  - Name: "\uB9E5\uC2A4"
+    StandingSprite: {fileID: 21300000, guid: e729927b0ad904b8da1887350473d083, type: 3}
+  - Name: "\uC5D0\uC774\uB2E4"
+    StandingSprite: {fileID: 21300000, guid: e729927b0ad904b8da1887350473d083, type: 3}
 --- !u!1 &551297194
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 793199382}
+  - component: {fileID: 793199383}
   m_Layer: 5
   m_Name: Standings
   m_TagString: Untagged
@@ -456,6 +484,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -400}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &793199383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793199381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949d984d5802d4cf899db0eea9628953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _assets: {fileID: 288390393}
+  _standingSlots:
+  - {fileID: 1213764559}
+  - {fileID: 1894800564}
+  - {fileID: 1082768429}
 --- !u!1 &834242143
 GameObject:
   m_ObjectHideFlags: 0

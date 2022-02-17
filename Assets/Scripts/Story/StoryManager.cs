@@ -14,6 +14,8 @@ namespace Story
         private SceneLoader _loader;
         [SerializeField]
         private DialogSetter _dialogSetter;
+        [SerializeField]
+        private StandingSetter _standingSetter;
         private List<ScenarioLine> _scenarioList;
         private int _pin;
         private bool _isOnLoading;
@@ -38,6 +40,15 @@ namespace Story
             switch (line.Code)
             {
                 case "SET":
+                    switch (line.Info)
+                    {
+                        case "Member":
+                            _standingSetter.SetStandings(line.Contents);
+                            break;
+                        case "Name":
+                            // TODO: 사용자 이름 입력받기
+                            break;
+                    }
                     Next();
                     break;
                 case "TALK":
