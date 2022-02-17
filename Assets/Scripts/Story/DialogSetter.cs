@@ -22,7 +22,7 @@ namespace Story
             _name.text = name;
             _dialog.text = dialog;
             float duration = dialog.Length * 0.1f / _dialogShowingSpeed;
-            _dialogAnimation = _dialog.DOText(dialog, duration).From("");
+            _dialogAnimation = _dialog.DOText(dialog, duration).From("").target;
         }
 
         public bool IsAnimationPlaying()
