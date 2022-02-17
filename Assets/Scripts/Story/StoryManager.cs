@@ -111,7 +111,14 @@ namespace Story
             var line = _scenarioList[_pin];
             if (line.Code.Equals("SELECT"))
                 return;
-            // 만약에 TALK 텍스트 애니메이션 재생 중이면 안 넘기기
+            if (line.Code.Equals("TALK"))
+            {
+                if (_dialogSetter.IsAnimationPlaying())
+                {
+                    _dialogSetter.ForceCompleteAnimation();
+                    return;
+                }
+            }
             Next();
         }
 
