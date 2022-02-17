@@ -13,7 +13,7 @@ namespace DefaultUI
         [SerializeField]
         private EventTrigger _eventTrigger;
 
-        public void Init()
+        public void Init(System.Action clickAction)
         {
             EventTrigger.Entry entry;
 
@@ -34,13 +34,8 @@ namespace DefaultUI
 
             entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerClick;
-            entry.callback.AddListener(action => Clicked());
+            entry.callback.AddListener(action => clickAction());
             _eventTrigger.triggers.Add(entry);
-        }
-
-        private void Clicked()
-        {
-            // click 이벤트
         }
 
         private void Down()

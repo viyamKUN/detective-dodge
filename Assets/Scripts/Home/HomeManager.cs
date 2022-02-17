@@ -5,8 +5,11 @@ using DG.Tweening;
 
 namespace Home
 {
+    using DefaultUI;
     public class HomeManager : MonoBehaviour
     {
+        [SerializeField]
+        private SceneLoader _loader;
         [SerializeField]
         private StoriesButtonsManager _storyButtonsManager;
 
@@ -16,6 +19,11 @@ namespace Home
             // 진행도 표시
             _storyButtonsManager.Init();
             DOTween.Init(true, true, LogBehaviour.Default);
+        }
+
+        public void GameStart()
+        {
+            _loader.Load(SceneName.Game);
         }
     }
 }

@@ -13,7 +13,12 @@ namespace Home
 
         public void Init()
         {
-            _buttonAnimator.Init();
+            _buttonAnimator.Init(Click);
+        }
+
+        private void Click()
+        {
+
         }
     }
 }
