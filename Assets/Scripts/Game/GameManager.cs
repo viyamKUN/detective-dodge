@@ -85,6 +85,8 @@ namespace Game
                 StopCoroutine(_timer);
             }
             _uiManager.GameOverUI(_clueEarnedList);
+            DefaultSystem.PlayerSaveData.GetPlayer.AddClues(_clueEarnedList);
+            DefaultSystem.PlayerSaveData.Save();
         }
 
         private IEnumerator TimeChecker()

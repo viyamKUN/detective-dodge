@@ -32,5 +32,11 @@ namespace Data.VariableData
             ClueList = new List<string>();
             ActivateStories = new List<StoryProgress>(storyCount);
         }
+
+        public void AddClues(List<string> ids)
+        {
+            ids.RemoveAll(x => ClueList.Contains(x));
+            ClueList.AddRange(ids);
+        }
     }
 }
