@@ -12,6 +12,8 @@ namespace Game.Player
         private Rigidbody2D _rigid;
         [SerializeField]
         private Animator _animator;
+        [SerializeField]
+        private Game.Weapone.BulletPool _bulletPool;
 
         public Vector2 MoveDirection { get; set; }
         public Vector2 LookDirection { get; set; }
@@ -22,6 +24,7 @@ namespace Game.Player
             _config = config;
             MoveDirection = Vector2.zero;
             LookDirection = Vector2.zero;
+            _bulletPool.Init();
         }
 
         private void FixedUpdate()
