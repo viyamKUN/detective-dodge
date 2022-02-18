@@ -382,6 +382,7 @@ MonoBehaviour:
   _uiManager: {fileID: 283013611}
   _controller: {fileID: 283013613}
   _waveManager: {fileID: 1113682047}
+  _clueDropManager: {fileID: 607249663}
 --- !u!114 &283013611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9184d7dfe8b2241e8838733364dd75d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _object: {fileID: 341686364}
   _prefab: {fileID: 7613969238262024300, guid: 77a723e51f2fa49159cec2a0cd48aa09, type: 3}
 --- !u!114 &341686364
 MonoBehaviour:
@@ -1273,6 +1273,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606548076}
   m_CullTransparentMesh: 1
+--- !u!1 &607249661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607249662}
+  - component: {fileID: 607249663}
+  m_Layer: 0
+  m_Name: ClueDropManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &607249662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607249661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &607249663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607249661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd587f9386f6485bbaa886a97162e6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4633021012566303190, guid: cf30c89e1583a45cd85d49f63aab7c7c, type: 3}
 --- !u!1 &661477782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,7 +1804,7 @@ RectTransform:
   m_Children:
   - {fileID: 341686362}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

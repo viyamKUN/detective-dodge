@@ -17,10 +17,13 @@ namespace Game
         private Player.PlayerController _controller;
         [SerializeField]
         private Enemy.WaveManager _waveManager;
+        [SerializeField]
+        private ClueDropManager _clueDropManager;
 
         private static GameManager _instance;
         public static GameManager GetInstance => _instance;
         public Transform PlayerPos => _controller.PlayerObject;
+        private List<string> _clueEarnedList = new List<string>();
         private WaitForSeconds _oneSecondWait = new WaitForSeconds(1);
         private Coroutine _timer;
         private int _playTime;
@@ -46,12 +49,15 @@ namespace Game
             }
             EnemyStaticData.ReadData();
             WaveStaticData.ReadData();
+            StaticData.ClueStaticData.ReadData();
 
             _uiManager.Init();
             _controller.Init();
             _waveManager.Init();
+            _clueDropManager.Init();
 
             _isGameOver = false;
+            _clueEarnedList = new List<string>();
         }
 
         private void Start()
@@ -105,6 +111,22 @@ namespace Game
         public void Retry()
         {
             _loader.Load(SceneName.Game);
+        }
+
+        public void EarnClue(string clueID)
+        {
+            if (_clueEarnedList.Contains(clueID))
+                return;
+            _clueEarnedList.Add(clueID);
+        }
+
+        public void DropClue(int enemyID, Vector2 position)
+        {
+            if (EnemyStaticData.DoesDropClue(enemyID))
+            {
+                var clueID = StaticData.ClueStaticData.GetClueIDByRarity();
+                _clueDropManager.GetClue().Spawn(clueID, position);
+            }
         }
     }
 }

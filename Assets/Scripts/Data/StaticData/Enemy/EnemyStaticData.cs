@@ -36,5 +36,10 @@ namespace Data.StaticData.Enemy
         {
             return _enemyMap[id].HP;
         }
+
+        public static bool DoesDropClue(int id)
+        {
+            return _enemyMap[id].ClueDrop;
+        }
     }
 }

@@ -7,8 +7,6 @@ namespace Game.Weapone
     public class BulletPool : MonoBehaviour
     {
         [SerializeField]
-        private WeaponeObject _object;
-        [SerializeField]
         private GameObject _prefab;
         private List<WeaponeController> _weaponeControllers;
 

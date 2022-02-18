@@ -34,5 +34,10 @@ namespace StaticData
         {
             return _clues[id];
         }
+
+        public static string GetClueIDByRarity()
+        {
+            return _clues.Keys.ToList()[Random.Range(0, _clues.Count)];
+        }
     }
 }

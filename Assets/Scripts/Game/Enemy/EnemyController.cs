@@ -62,6 +62,7 @@ namespace Game.Enemy
         public void Dead()
         {
             _state = Enums.UnitState.Dead;
+            GameManager.GetInstance.DropClue(_enemy.GetID, transform.position);
             gameObject.SetActive(false);
         }
 
@@ -72,12 +73,12 @@ namespace Game.Enemy
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("ATTACKED by " + other.name);
             switch (other.tag)
             {
                 case "Weapone":
                     var weapone = other.GetComponent<Weapone.WeaponeController>();
                     Hit(weapone.GetPower);
+                    weapone.Destroy();
                     break;
             }
         }
