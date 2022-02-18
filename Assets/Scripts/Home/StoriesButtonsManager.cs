@@ -16,8 +16,6 @@ namespace Home
             int index = 0;
             _storyButton = this.gameObject.GetComponentsInChildren<StoryButton>().ToList();
             _storyButton.ForEach(x => x.Init(index++, _manager));
-
-            // TODO 스토리 해금/안해금 표시
         }
     }
 }

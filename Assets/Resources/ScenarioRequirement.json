@@ -1,0 +1,47 @@
+{
+    "Requires": [
+        {
+            "ID": 0,
+            "ClueList": [
+                "essential_10"
+            ]
+        },
+        {
+            "ID": 1,
+            "ClueList": [
+                "essential_10",
+                "essential_1"
+            ]
+        },
+        {
+            "ID": 2,
+            "ClueList": [
+                "essential_2"
+            ]
+        },
+        {
+            "ID": 3,
+            "ClueList": [
+                "essential_3"
+            ]
+        },
+        {
+            "ID": 4,
+            "ClueList": [
+                "essential_4"
+            ]
+        },
+        {
+            "ID": 5,
+            "ClueList": [
+                "essential_5"
+            ]
+        },
+        {
+            "ID": 6,
+            "ClueList": [
+                "essential_6"
+            ]
+        }
+    ]
+}

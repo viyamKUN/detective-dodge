@@ -8,7 +8,9 @@ namespace StaticData
     public static class StoryStaticData
     {
         private static readonly string _scenarioPath = "KR/Scenarios";
+        private static readonly string _requireFilename = "ScenarioRequirement";
         private static Dictionary<int, List<ScenarioLine>> _scenarios;
+        private static RequirementsList _requirements;
 
         public static void ReadData()
         {
@@ -27,11 +29,19 @@ namespace StaticData
                     ));
                 }
             }
+
+            _requirements = JsonUtility.FromJson<RequirementsList>(Resources.Load<TextAsset>(_requireFilename).text);
         }
 
+        public static int ScenarioCount => _scenarios.Count;
         public static List<ScenarioLine> GetScenario(int scenarioNumber)
         {
             return _scenarios[scenarioNumber];
+        }
+
+        public static string[] GetRequires(int scenarioNumber)
+        {
+            return _requirements.Requires[scenarioNumber].ClueList;
         }
     }
 }
