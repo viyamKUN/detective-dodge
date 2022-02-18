@@ -1,6 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Story
 {
@@ -18,6 +19,8 @@ namespace Story
         private StandingSetter _standingSetter;
         [SerializeField]
         private SelectionSetter _selectionSetter;
+        [SerializeField]
+        private Image _fade;
         private List<ScenarioLine> _scenarioList;
         private int _pin;
         private int _flag;
@@ -34,6 +37,7 @@ namespace Story
         private void ShowScenario(int id)
         {
             _scenarioList = StoryStaticData.GetScenario(id);
+            _fade.gameObject.SetActive(false);
             _isOnLoading = false;
             _selectionLines = new List<ScenarioLine>();
             _pin = 0;
@@ -80,7 +84,8 @@ namespace Story
         private void EndScenario()
         {
             if (_isOnLoading) return;
-            _loader.Load(SceneName.Home);
+            _fade.gameObject.SetActive(true);
+            _fade.DOFade(1, 0.5f).From(0).OnComplete(() => _loader.Load(SceneName.Home));
         }
 
         private void Next()
@@ -134,6 +139,11 @@ namespace Story
             }
             _selectionLines.Clear();
             Next();
+        }
+
+        public void Skip()
+        {
+            EndScenario();
         }
     }
 }
