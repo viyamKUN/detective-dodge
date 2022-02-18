@@ -10,6 +10,8 @@ namespace Game.Player
         [SerializeField]
         private PlayerMove _move;
 
+        public Transform PlayerObject => _move.transform;
+
         public void Init()
         {
             _move.Init();

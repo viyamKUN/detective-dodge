@@ -7,9 +7,11 @@ namespace Game.Enemy
     public class EnemyController : MonoBehaviour
     {
         [SerializeField]
+        private EnemyObjcet _enemy;
+        [SerializeField]
         private Rigidbody2D _rigid;
         private Transform _target;
-        private Enums.UnitState _state;
+        private Enums.UnitState _state = Enums.UnitState.Dead;
 
         private void FixedUpdate()
         {
@@ -20,16 +22,18 @@ namespace Game.Enemy
             Move();
         }
 
-        public void Spawn(Transform player)
+        public void Spawn()
         {
             _state = Enums.UnitState.Alive;
-            _target = player;
+            _target = GameManager.GetInstance.PlayerPos;
             gameObject.SetActive(true);
         }
 
         public void Move()
         {
-            // Move to target
+            Vector2 direction = ((Vector2)_target.position - (Vector2)transform.position).normalized;
+            var moveAmount = direction * _enemy.GetSpeed * Time.deltaTime * 0.1f;
+            _rigid.MovePosition((Vector2)transform.position + moveAmount);
         }
 
         public void Hit()
