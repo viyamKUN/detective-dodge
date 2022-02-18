@@ -38,6 +38,7 @@ namespace Game
 
             _uiManager.Init();
             _controller.Init();
+            _waveManager.Init();
         }
 
         private void Start()
@@ -54,7 +55,6 @@ namespace Game
         {
             _waveManager.StopWave();
         }
-
 
     }
 }

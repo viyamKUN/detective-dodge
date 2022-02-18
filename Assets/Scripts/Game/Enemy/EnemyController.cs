@@ -22,6 +22,12 @@ namespace Game.Enemy
             Move();
         }
 
+        public void Init()
+        {
+            _state = Enums.UnitState.Dead;
+            this.gameObject.SetActive(false);
+        }
+
         public void Spawn()
         {
             _state = Enums.UnitState.Alive;

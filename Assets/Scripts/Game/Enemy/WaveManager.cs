@@ -17,6 +17,10 @@ namespace Game.Enemy
         private WaitForSeconds _waveCallDelay = new WaitForSeconds(3);
         private Coroutine _waveCoroutine;
 
+        public void Init()
+        {
+            _spawner.Init();
+        }
 
         public void StartWave()
         {

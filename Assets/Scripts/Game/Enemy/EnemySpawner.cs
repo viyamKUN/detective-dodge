@@ -9,9 +9,22 @@ namespace Game.Enemy
         [SerializeField]
         private EnemyObjectPool _objectPool;
 
+        public void Init()
+        {
+            _objectPool.Init();
+        }
+
         public void SpawnEnemies(string shape, List<(int id, int count)> enemies)
         {
-            Debug.Log($"Spawn Shape: {shape}  Enemies kind Count: {enemies.Count}");
+            if (shape.Equals("Circle"))
+            {
+                Debug.Log("Spawn Circle");
+            }
+            else if (shape.Contains("Clock"))
+            {
+                int timePin = int.Parse(shape.Replace("Clock", ""));
+                Debug.Log("Spawn Clock Side : " + timePin);
+            }
         }
     }
 }
