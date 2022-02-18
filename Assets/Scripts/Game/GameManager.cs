@@ -32,6 +32,8 @@ namespace Game
 
             Application.targetFrameRate = 60;
             EnemyStaticData.ReadData();
+            WaveStaticData.ReadData();
+
             _uiManager.Init();
             _controller.Init();
         }
