@@ -166,8 +166,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 85, y: -240}
-  m_SizeDelta: {x: -330, y: 200}
+  m_AnchoredPosition: {x: 95, y: -240}
+  m_SizeDelta: {x: -290, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7073111921300090061
 CanvasRenderer:
@@ -197,11 +197,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uBAAC\uC2A4\uD130 \uC8FD\uC774\uACE0 \uBB50\uC2DC\uAE30 \uC800\uC2DC\uAE30
-    \uAC8C\uC784 \uC124\uBA85\uBAAC\uC2A4\uD130 \uC8FD\uC774\uACE0 \uBB50\uC2DC\uAE30
-    \uC800\uC2DC\uAE30 \uAC8C\uC784 \uC124\uBA85\uBAAC\uC2A4\uD130 \uC8FD\uC774\uACE0
-    \uBB50\uC2DC\uAE30 \uC800\uC2DC\uAE30 \uAC8C\uC784 \uC124\uBA85\uBAAC\uC2A4\uD130
-    \uC8FD\uC774\uACE0 \uBB50\uC2DC\uAE30 "
+  m_text: "Sanctuary \uB9C8\uC744\uC5D0\uC11C \uBC8C\uC5B4\uC9C4 \uC0B4\uC778 \uC0AC\uAC74\uC744
+    \uD574\uACB0\uD55C\uB2E4. \n\uBA38\uB9BF\uC18D \uC0DD\uAC01\uC744 \uBC29\uD574\uD558\uB294
+    \uBAAC\uC2A4\uD130\uB4E4\uC744 \uC81C\uAC70\uD558\uC5EC,\n\uC9C0\uB2A5\uC744
+    \uC62C\uB9AC\uACE0 \uC911\uC694\uD55C \uB2E8\uC11C\uB97C \uC5BB\uC790.\n\uC218\uC9D1\uD55C
+    \uB2E8\uC11C\uB4E4\uC744 \uD1A0\uB300\uB85C \uBC94\uC778\uC744 \uC9C0\uBAA9\uD558\uACE0,
+    \uC0AC\uAC74\uC758 \uC9C4\uC2E4\uC744 \uBC1D\uD600\uB77C!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c31ed08e996d4527ac31708ac385d6c, type: 2}
   m_sharedMaterial: {fileID: -7670961727316252593, guid: 5c31ed08e996d4527ac31708ac385d6c, type: 2}
@@ -240,7 +241,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 20
+  m_lineSpacing: 24
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

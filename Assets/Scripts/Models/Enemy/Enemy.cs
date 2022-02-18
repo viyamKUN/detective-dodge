@@ -13,7 +13,7 @@ namespace Models.Enemy
         public List<int> ItemDrops;
         public bool ClueDrop;
 
-        public Enemy(object name, object hp, object speed, object power, object expDrops, object itemDrops, object clueDrop)
+        public Enemy(object name, object hp, object speed, object power, object expDrops, object clueDrop)
         {
             Name = name.ToString();
             HP = (int)hp;
@@ -21,10 +21,10 @@ namespace Models.Enemy
             Power = (float)power;
             EXPDrops = (float)expDrops;
 
-            var itemDropsList = from string item in itemDrops.ToString().Split(',').ToList()
-                                select System.Int32.Parse(item);
+            // var itemDropsList = from string item in itemDrops.ToString().Split(',').ToList()
+            //                     select System.Int32.Parse(item);
+            // ItemDrops = itemDropsList.ToList();
 
-            ItemDrops = itemDropsList.ToList();
             ClueDrop = clueDrop.ToString().Equals("TRUE");
         }
     }

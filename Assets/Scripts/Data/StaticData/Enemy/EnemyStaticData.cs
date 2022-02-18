@@ -17,7 +17,7 @@ namespace Data.StaticData.Enemy
             foreach (var data in dataMaps)
             {
                 _enemyMap.Add((int)data["ID"], new Enemy(
-                    data["Name"], data["HP"], data["Speed"], data["Power"], data["EXPDrops"], data["ItemDrops"], data["ClueDrop"]
+                    data["Name"], data["HP"], data["Speed"], data["Power"], data["EXPDrops"], data["ClueDrop"]
                 ));
             }
         }
