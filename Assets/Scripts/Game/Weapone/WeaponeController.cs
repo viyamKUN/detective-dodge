@@ -31,10 +31,13 @@ namespace Game.Weapone
             {
                 StopCoroutine(_moving);
             }
+            gameObject.SetActive(true);
             _collider.enabled = true;
+            _rigid.velocity = Vector2.zero;
+            _renderer.color = new Color(1, 1, 1, 1);
             transform.position = position;
-            transform.LookAt(look);
-            _rigid.AddForce(transform.forward * _weapone.GetSpeed, ForceMode2D.Impulse);
+
+            _rigid.AddForce((look - (Vector2)transform.position).normalized * 50 * _weapone.GetSpeed, ForceMode2D.Force);
             _moving = StartCoroutine(MovingCoroutine());
         }
 
@@ -51,7 +54,7 @@ namespace Game.Weapone
         {
             yield return _bulletAlive;
             _collider.enabled = false;
-            _renderer.DOFade(0, 0.5f).From(1).OnComplete(() => gameObject.SetActive(false));
+            _renderer.DOFade(0, 0.2f).From(1).OnComplete(() => gameObject.SetActive(false));
         }
     }
 }

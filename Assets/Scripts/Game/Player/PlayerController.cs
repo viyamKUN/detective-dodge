@@ -31,19 +31,6 @@ namespace Game.Player
             _move.MoveDirection = callback.ReadValue<Vector2>();
         }
 
-        public void Look(InputAction.CallbackContext callback)
-        {
-            _move.LookDirection = callback.ReadValue<Vector2>();
-        }
-
-        /// <summary>
-        /// Auto Shooting by weapone settings
-        /// </summary>
-        public void Shoot()
-        {
-            // Shooter list의 모든 슈팅 제어
-        }
-
         public void Hit(float rawDamage)
         {
             _hp -= (int)rawDamage;
@@ -55,6 +42,11 @@ namespace Game.Player
             UpdateUI();
         }
 
+        public void StartFire()
+        {
+            _move.StartFire();
+        }
+
         public void KillEnemy(float earnEXP)
         {
             _exp += earnEXP;
@@ -64,6 +56,7 @@ namespace Game.Player
         private void Dead()
         {
             _gameManager.GameOver();
+            _move.Dead();
         }
 
         private void UpdateUI()

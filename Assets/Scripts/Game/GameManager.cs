@@ -58,6 +58,7 @@ namespace Game
         {
             Invoke("StartGame", 3f);
             _timer = StartCoroutine(TimeChecker());
+            _controller.StartFire();
         }
 
         private void StartGame()
