@@ -28,7 +28,7 @@ namespace Game.Enemy
             this.gameObject.SetActive(false);
         }
 
-        public void Spawn()
+        public void Spawn(Vector2 position)
         {
             _state = Enums.UnitState.Alive;
             _target = GameManager.GetInstance.PlayerPos;

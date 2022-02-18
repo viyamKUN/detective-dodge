@@ -59,7 +59,7 @@ namespace Game.Enemy
             {
                 UpdateWave();
             }
-            _spawner.SpawnEnemies(_currentWave.Shape, _currentWave.Enemies);
+            _spawner.SpawnWaveContents(_currentWave.Shape, _currentWave.Enemies);
             _spawnCount++;
         }
 
