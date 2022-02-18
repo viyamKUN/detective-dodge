@@ -22,14 +22,14 @@ namespace Data.VariableData
     {
         public string Name;
         public float EXP;
-        public List<int> ClueList;
+        public List<string> ClueList;
         public List<StoryProgress> ActivateStories;
 
         public Player(string name, int storyCount)
         {
             Name = name;
             EXP = 0;
-            ClueList = new List<int>();
+            ClueList = new List<string>();
             ActivateStories = new List<StoryProgress>(storyCount);
         }
     }

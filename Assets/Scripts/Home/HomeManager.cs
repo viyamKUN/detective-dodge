@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -17,10 +15,14 @@ namespace Home
         private StoriesButtonsManager _storyButtonsManager;
         [SerializeField]
         private UpperUIManager _upperUIManager;
+        [SerializeField]
+        private ClueUIManager _clueUIManager;
 
         private void Awake()
         {
             StoryStaticData.ReadData();
+            ClueStaticData.ReadData();
+
             if (!PlayerSaveData.Load())
             {
                 // 이름 입력 이벤트 출력
@@ -30,6 +32,7 @@ namespace Home
             _storyButtonsManager.Init();
             _upperUIManager.SetUI(PlayerSaveData.GetPlayer.Name, PlayerSaveData.GetPlayer.EXP);
             DOTween.Init(true, true, LogBehaviour.Default);
+            _clueUIManager.Init();
         }
 
         public void EnterPlayerName(string name)
@@ -49,6 +52,11 @@ namespace Home
         public void StoryStart()
         {
             _loader.Load(SceneName.Story);
+        }
+
+        public void ClueUIOpen()
+        {
+            _clueUIManager.Open();
         }
     }
 }
