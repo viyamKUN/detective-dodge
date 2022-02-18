@@ -24,7 +24,7 @@ namespace Game.UI
 
         public void Init()
         {
-
+            _overUI.Init();
         }
 
         public void SetTimer(int playTime)
@@ -40,9 +40,9 @@ namespace Game.UI
             _expGauge.fillAmount = expRatio;
         }
 
-        public void GameOverUI()
+        public void GameOverUI(List<string> clues)
         {
-            _overUI.Show();
+            _overUI.Show(clues);
         }
     }
 }

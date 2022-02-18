@@ -84,7 +84,7 @@ namespace Game
             {
                 StopCoroutine(_timer);
             }
-            _uiManager.GameOverUI();
+            _uiManager.GameOverUI(_clueEarnedList);
         }
 
         private IEnumerator TimeChecker()
