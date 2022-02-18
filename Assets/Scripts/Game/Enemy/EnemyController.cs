@@ -54,5 +54,10 @@ namespace Game.Enemy
             _state = Enums.UnitState.Dead;
             gameObject.SetActive(false);
         }
+
+        public float GetAttackPower()
+        {
+            return _enemy.GetPower;
+        }
     }
 }

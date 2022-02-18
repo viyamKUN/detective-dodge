@@ -13,9 +13,9 @@ namespace Game.Player
         public Vector2 LookDirection { get; set; }
         private PlayerConfig _config;
 
-        public void Init()
+        public void Init(PlayerConfig config)
         {
-            _config = new PlayerConfig();
+            _config = config;
             MoveDirection = Vector2.zero;
             LookDirection = Vector2.zero;
         }

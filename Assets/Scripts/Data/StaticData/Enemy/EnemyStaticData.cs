@@ -26,5 +26,10 @@ namespace Data.StaticData.Enemy
         {
             return _enemyMap[id].Speed;
         }
+
+        public static float GetPower(int id)
+        {
+            return _enemyMap[id].Power;
+        }
     }
 }

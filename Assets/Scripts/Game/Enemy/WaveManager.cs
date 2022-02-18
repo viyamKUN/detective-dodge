@@ -14,7 +14,7 @@ namespace Game.Enemy
         private Wave _currentWave;
         private int _currentLevel;
         private int _spawnCount;
-        private WaitForSeconds _waveCallDelay = new WaitForSeconds(3);
+        private WaitForSeconds _waveCallDelay = new WaitForSeconds(20);
         private Coroutine _waveCoroutine;
 
         public void Init()

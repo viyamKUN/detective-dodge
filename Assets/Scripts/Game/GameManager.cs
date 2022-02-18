@@ -12,7 +12,7 @@ namespace Game
         [SerializeField]
         private SceneLoader _loader;
         [SerializeField]
-        private GameUIManager _uiManager;
+        private UI.GameUIManager _uiManager;
         [SerializeField]
         private Player.PlayerController _controller;
         [SerializeField]
@@ -24,6 +24,7 @@ namespace Game
         private WaitForSeconds _oneSecondWait = new WaitForSeconds(1);
         private Coroutine _timer;
         private int _playTime;
+        private bool _isGameOver;
 
         private void Awake()
         {
@@ -37,12 +38,20 @@ namespace Game
             }
 
             Application.targetFrameRate = 60;
+            DG.Tweening.DOTween.Init(true, true, DG.Tweening.LogBehaviour.Default);
+
+            if (!DefaultSystem.PlayerSaveData.Load())
+            {
+                DefaultSystem.PlayerSaveData.Init("Dummy", 7);
+            }
             EnemyStaticData.ReadData();
             WaveStaticData.ReadData();
 
             _uiManager.Init();
             _controller.Init();
             _waveManager.Init();
+
+            _isGameOver = false;
         }
 
         private void Start()
@@ -56,13 +65,19 @@ namespace Game
             _waveManager.StartWave();
         }
 
-        private void GameOver()
+        public void GameOver()
         {
+            if (_isGameOver)
+            {
+                return;
+            }
+            _isGameOver = true;
             _waveManager.StopWave();
             if (_timer != null)
             {
                 StopCoroutine(_timer);
             }
+            _uiManager.GameOverUI();
         }
 
         private IEnumerator TimeChecker()
@@ -74,6 +89,21 @@ namespace Game
                 _uiManager.SetTimer(_playTime);
                 _waveManager.UpdateWaveLevel(_playTime);
             }
+        }
+
+        public void UpdateUI(float hpRatio, float expRatio)
+        {
+            _uiManager.SetGauges(hpRatio, expRatio);
+        }
+
+        public void GoHomeScene()
+        {
+            _loader.Load(SceneName.Home);
+        }
+
+        public void Retry()
+        {
+            _loader.Load(SceneName.Game);
         }
     }
 }
