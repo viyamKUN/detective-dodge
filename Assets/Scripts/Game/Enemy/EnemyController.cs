@@ -68,7 +68,7 @@ namespace Game.Enemy
 
         public float GetAttackPower()
         {
-            return _enemy.GetPower;
+            return _enemy.GetPower * 10;
         }
 
         private void OnTriggerEnter2D(Collider2D other)

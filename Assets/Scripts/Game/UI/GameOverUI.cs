@@ -28,6 +28,7 @@ namespace Game.UI
         {
             _slots = _slotsParent.GetComponentsInChildren<ResultClueSlot>().ToList();
             _slots.ForEach(x => x.Init(ShowDetails));
+            gameObject.SetActive(false);
         }
 
 

@@ -20,7 +20,7 @@ namespace Game.UI
         public void SetSlot(string clueID)
         {
             gameObject.SetActive(true);
-            _text.name = StaticData.ClueStaticData.GetClue(clueID).Name;
+            _text.text = StaticData.ClueStaticData.GetClue(clueID).Name;
             _id = clueID;
         }
 
