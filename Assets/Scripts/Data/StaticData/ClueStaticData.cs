@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace StaticData
 {
@@ -19,9 +20,14 @@ namespace StaticData
             foreach (var data in dataList)
             {
                 _clues.Add(data["ID"].ToString(), new Clue(
-                    data["Name"], data["Contents"], data["Rarity"]
+                    data["ID"], data["Name"], data["Contents"], data["Rarity"]
                 ));
             }
+        }
+
+        public static List<string> GetCluesByType(ClueType type)
+        {
+            return _clues.Keys.ToList().FindAll(x => _clues[x].Type.Equals(type));
         }
 
         public static Clue GetClue(string id)
