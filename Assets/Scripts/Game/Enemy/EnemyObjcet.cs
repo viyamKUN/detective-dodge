@@ -9,7 +9,9 @@ namespace Game.Enemy
     {
         [SerializeField]
         private int _id;
+        public int GetID => _id;
         public float GetSpeed => EnemyStaticData.GetSpeed(_id);
         public float GetPower => EnemyStaticData.GetPower(_id);
+        public int GetHP => EnemyStaticData.GetHP(_id);
     }
 }

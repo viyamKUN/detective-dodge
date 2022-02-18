@@ -20,9 +20,14 @@ namespace Game.Player
             switch (other.tag)
             {
                 case "Enemy":
-                    var enemy = other.GetComponent<Game.Enemy.EnemyController>();
+                    var enemy = other.GetComponent<Enemy.EnemyController>();
                     _controller.Hit(enemy.GetAttackPower());
                     StartCoroutine(SafeTime());
+                    break;
+                case "Clue":
+                    var clue = other.GetComponent<ClueObject>();
+                    GameManager.GetInstance.EarnClue(clue.GetClueID);
+                    clue.Destory();
                     break;
             }
         }

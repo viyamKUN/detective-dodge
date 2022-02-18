@@ -31,5 +31,15 @@ namespace Data.StaticData.Enemy
         {
             return _enemyMap[id].Power;
         }
+
+        public static int GetHP(int id)
+        {
+            return _enemyMap[id].HP;
+        }
+
+        public static bool DoesDropClue(int id)
+        {
+            return _enemyMap[id].ClueDrop;
+        }
     }
 }
