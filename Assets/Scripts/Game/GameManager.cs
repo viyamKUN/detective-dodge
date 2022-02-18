@@ -15,6 +15,8 @@ namespace Game
         private GameUIManager _uiManager;
         [SerializeField]
         private Player.PlayerController _controller;
+        [SerializeField]
+        private Enemy.WaveManager _waveManager;
         private static GameManager _instance;
         public static GameManager GetInstance => _instance;
         public Transform PlayerPos => _controller.PlayerObject;
@@ -37,5 +39,22 @@ namespace Game
             _uiManager.Init();
             _controller.Init();
         }
+
+        private void Start()
+        {
+            Invoke("StartGame", 3f);
+        }
+
+        private void StartGame()
+        {
+            _waveManager.StartWave();
+        }
+
+        private void GameOver()
+        {
+            _waveManager.StopWave();
+        }
+
+
     }
 }

@@ -1,3 +1,3 @@
-ID,Name,HP,Speed,Power,EXPDrops,ItemDrops,ClueDrops
-0,고민,10,1.0,1.0,0.01,"0,1","tmi_0"
-1,깊은고민,20,1.2,1.3,0.01,"0,1","tmi_1"
+ID,Name,HP,Speed,Power,EXPDrops,ItemDrops,ClueDrop
+0,고민,10,1.0,1.0,0.01,"0,1",TRUE
+1,깊은고민,20,1.2,1.3,0.01,"0,1",FALSE

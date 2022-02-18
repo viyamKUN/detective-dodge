@@ -30,5 +30,15 @@ namespace Data.StaticData.Enemy
                 ));
             });
         }
+
+        public static Wave GetRandomWave(int level)
+        {
+            if (!_enemyMap.ContainsKey(level))
+            {
+                level = _enemyMap.Count - 1;
+            }
+            int count = _enemyMap[level].Count;
+            return _enemyMap[level][Random.Range(0, count)];
+        }
     }
 }
