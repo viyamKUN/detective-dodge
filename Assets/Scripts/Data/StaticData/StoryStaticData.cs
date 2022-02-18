@@ -7,7 +7,7 @@ namespace StaticData
     using Models.Story;
     public static class StoryStaticData
     {
-        private static readonly string _scenarioPath = "KR";
+        private static readonly string _scenarioPath = "KR/Scenarios";
         private static Dictionary<int, List<ScenarioLine>> _scenarios;
 
         public static void ReadData()

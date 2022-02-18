@@ -21,6 +21,8 @@ namespace Home
         private void Awake()
         {
             StoryStaticData.ReadData();
+            ClueStaticData.ReadData();
+
             if (!PlayerSaveData.Load())
             {
                 // 이름 입력 이벤트 출력
