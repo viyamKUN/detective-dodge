@@ -37,7 +37,7 @@ namespace Game.Weapone
             _renderer.color = new Color(1, 1, 1, 1);
             transform.position = position;
 
-            _rigid.AddForce((look - (Vector2)transform.position).normalized * 50 * _weapone.GetSpeed, ForceMode2D.Force);
+            _rigid.AddForce((look - (Vector2)transform.position).normalized * 20 * _weapone.GetSpeed, ForceMode2D.Force);
             _moving = StartCoroutine(MovingCoroutine());
         }
 

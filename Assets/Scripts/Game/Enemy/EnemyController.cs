@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Game.Enemy
 {
@@ -10,8 +11,11 @@ namespace Game.Enemy
         private EnemyObjcet _enemy;
         [SerializeField]
         private Rigidbody2D _rigid;
+        [SerializeField]
+        private SpriteRenderer _renderer;
         private Transform _target;
         private Enums.UnitState _state = Enums.UnitState.Dead;
+        private int _hp;
 
         private void FixedUpdate()
         {
@@ -25,6 +29,7 @@ namespace Game.Enemy
         public void Init()
         {
             _state = Enums.UnitState.Dead;
+            _hp = _enemy.GetHP;
             this.gameObject.SetActive(false);
         }
 
@@ -32,6 +37,7 @@ namespace Game.Enemy
         {
             _state = Enums.UnitState.Alive;
             _target = GameManager.GetInstance.PlayerPos;
+            _renderer.color = new Color(1, 1, 1, 1);
             gameObject.transform.position = (Vector2)_target.position + position + Random.insideUnitCircle * 1;
             gameObject.SetActive(true);
         }
@@ -43,14 +49,18 @@ namespace Game.Enemy
             _rigid.MovePosition((Vector2)transform.position + moveAmount);
         }
 
-        public void Hit()
+        public void Hit(float power)
         {
-            // Show Effect : 깜빡깜빡
+            _renderer.DOFade(0.5f, 0.2f).From(1).SetLoops(1, LoopType.Yoyo);
+            _hp -= (int)power;
+            if (_hp <= 0)
+            {
+                Dead();
+            }
         }
 
         public void Dead()
         {
-            // Show Effect
             _state = Enums.UnitState.Dead;
             gameObject.SetActive(false);
         }
@@ -58,6 +68,18 @@ namespace Game.Enemy
         public float GetAttackPower()
         {
             return _enemy.GetPower;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log("ATTACKED by " + other.name);
+            switch (other.tag)
+            {
+                case "Weapone":
+                    var weapone = other.GetComponent<Weapone.WeaponeController>();
+                    Hit(weapone.GetPower);
+                    break;
+            }
         }
     }
 }

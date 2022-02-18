@@ -62,6 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemy: {fileID: 5404539990277615860}
   _rigid: {fileID: 5404539990277615867}
+  _renderer: {fileID: 5404539990277615865}
 --- !u!212 &5404539990277615865
 SpriteRenderer:
   m_ObjectHideFlags: 0
