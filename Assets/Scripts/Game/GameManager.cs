@@ -17,9 +17,13 @@ namespace Game
         private Player.PlayerController _controller;
         [SerializeField]
         private Enemy.WaveManager _waveManager;
+
         private static GameManager _instance;
         public static GameManager GetInstance => _instance;
         public Transform PlayerPos => _controller.PlayerObject;
+        private WaitForSeconds _oneSecondWait = new WaitForSeconds(1);
+        private Coroutine _timer;
+        private int _playTime;
 
         private void Awake()
         {
@@ -44,6 +48,7 @@ namespace Game
         private void Start()
         {
             Invoke("StartGame", 3f);
+            _timer = StartCoroutine(TimeChecker());
         }
 
         private void StartGame()
@@ -54,7 +59,21 @@ namespace Game
         private void GameOver()
         {
             _waveManager.StopWave();
+            if (_timer != null)
+            {
+                StopCoroutine(_timer);
+            }
         }
 
+        private IEnumerator TimeChecker()
+        {
+            for (; ; )
+            {
+                yield return _oneSecondWait;
+                _playTime++;
+                _uiManager.SetTimer(_playTime);
+                _waveManager.UpdateWaveLevel(_playTime);
+            }
+        }
     }
 }
