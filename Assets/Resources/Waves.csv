@@ -1,5 +1,8 @@
 Level,Shape,Enemies,Times
 0,Circle,"0:10,1:5",1
-0,Clock3,"0:20",3
+0,Clock5,"0:20",1
+0,Clock8,"0:20",1
+0,Clock12,"0:20",1
+0,Clock2,"0:20",1
 1,Circle,"0:20,1:10",1
 1,Clock2,"0:40",2

@@ -8,6 +8,11 @@ namespace Game.Enemy
     {
         [SerializeField]
         private EnemyObjectPool _objectPool;
+        private List<Vector2> _circlePositions = new List<Vector2>()
+        {
+            new Vector2(4, 3), new Vector2(4, -3), new Vector2(-4, 3), new Vector2(-4, -3),
+            new Vector2(3, 4), new Vector2(3, -4), new Vector2(-3, 4),new Vector2(-3, -4)
+        };
 
         public void Init()
         {
@@ -40,20 +45,19 @@ namespace Game.Enemy
 
         private List<Vector2> GetPositionsPool(string shape, int timePin = 0)
         {
-            List<Vector2> positions = new List<Vector2>();
             switch (shape)
             {
                 case "Circle":
-                    positions.Add(new Vector2(1, 1));
-                    positions.Add(new Vector2(1, -1));
-                    positions.Add(new Vector2(-1, 1));
-                    positions.Add(new Vector2(-1, -1));
-                    break;
+                    return _circlePositions;
                 case "Clock":
-                    positions.Add(new Vector2(0, 3));
-                    break;
+                    List<Vector2> positions = new List<Vector2>();
+                    float angle = (3 - timePin) * 30;
+                    float x = Mathf.Cos(angle * Mathf.PI / 180.0f) * 5;
+                    float y = Mathf.Sin(angle * Mathf.PI / 180.0f) * 5;
+                    positions.Add(new Vector2(x, y));
+                    return positions;
             }
-            return positions;
+            return new List<Vector2>() { Vector2.one };
         }
     }
 }

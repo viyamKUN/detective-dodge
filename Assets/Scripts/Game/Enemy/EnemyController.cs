@@ -32,6 +32,7 @@ namespace Game.Enemy
         {
             _state = Enums.UnitState.Alive;
             _target = GameManager.GetInstance.PlayerPos;
+            gameObject.transform.position = (Vector2)_target.position + position + Random.insideUnitCircle * 1;
             gameObject.SetActive(true);
         }
 
