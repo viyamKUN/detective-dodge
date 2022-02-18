@@ -9,9 +9,10 @@ namespace Home
     public class ClueSection : MonoBehaviour
     {
         private List<ClueUIObject> _objects;
-        public void Init()
+        public void Init(System.Action<string> clickAction)
         {
             _objects = gameObject.GetComponentsInChildren<ClueUIObject>().ToList();
+            _objects.ForEach(x => x.Init(clickAction));
         }
 
         public void SetData(List<string> keys)
