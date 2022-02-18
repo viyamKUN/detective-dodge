@@ -43,8 +43,16 @@ namespace Story
 
         private void SetSlot(Image image, string name)
         {
-            image.gameObject.SetActive(true);
-            image.sprite = _assets.GetStandingAsset(name);
+            var sprite = _assets.GetStandingAsset(name);
+            if (sprite == null)
+            {
+                image.gameObject.SetActive(false);
+            }
+            else
+            {
+                image.gameObject.SetActive(true);
+                image.sprite = sprite;
+            }
         }
     }
 }
