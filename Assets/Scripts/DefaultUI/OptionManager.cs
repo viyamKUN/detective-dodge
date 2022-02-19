@@ -25,7 +25,7 @@ namespace DefaultUI
             if (_animation != null && DOTween.IsTweening(_animation))
                 return;
 
-            _canvas.DOFade(0, 0.5f).OnComplete(() => _active.SetActive(false));
+            _animation = _canvas.DOFade(0, 0.5f).OnComplete(() => _active.SetActive(false)).target;
         }
     }
 }

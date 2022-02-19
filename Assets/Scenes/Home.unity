@@ -524,6 +524,7 @@ GameObject:
   - component: {fileID: 139559773}
   - component: {fileID: 139559772}
   - component: {fileID: 139559771}
+  - component: {fileID: 139559774}
   m_Layer: 5
   m_Name: ClueUI
   m_TagString: Untagged
@@ -604,12 +605,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2a0c9046d6f4a2f806d8f9242ebb90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 139559774}
+  _rect: {fileID: 139559770}
   _essentialScetion: {fileID: 1920062559}
   _baseScetion: {fileID: 2132944168}
   _tmiScetion: {fileID: 1904281689}
   _detailObject: {fileID: 1486165999}
   _detailName: {fileID: 1977890405}
   _detailContents: {fileID: 2112281408}
+--- !u!225 &139559774
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139559769}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &152974551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6359,8 +6374,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 826167607}
   m_HandleRect: {fileID: 826167606}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.74333495
+  m_Value: 0.6376431
+  m_Size: 0.74336284
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9846,7 +9861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 840.0001}
+  m_AnchoredPosition: {x: 0, y: 1050.1671}
   m_SizeDelta: {x: 1040, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1911703332
