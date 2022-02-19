@@ -62,7 +62,10 @@ namespace Game.Enemy
         public void Dead()
         {
             _state = Enums.UnitState.Dead;
-            GameManager.GetInstance.DropClue(_enemy.GetID, transform.position);
+            if (Random.Range(0, 3) < 1)
+            {
+                GameManager.GetInstance.DropClue(_enemy.GetID, transform.position);
+            }
             gameObject.SetActive(false);
         }
 
