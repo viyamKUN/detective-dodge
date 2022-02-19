@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f69654c9c0db4853940a84a5521a218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rect: {fileID: 813718179803555289}
   _buttonAnimator: {fileID: 813718179803555284}
   _image: {fileID: 813718179803555288}
   _notReadToken: {fileID: 5575030766110394939}
