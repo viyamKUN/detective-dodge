@@ -462,9 +462,9 @@ MonoBehaviour:
   - Name: "\uC544\uB860"
     StandingSprite: {fileID: 21300000, guid: e729927b0ad904b8da1887350473d083, type: 3}
   - Name: "\uAC00\uBE0C\uB810\uB77C"
-    StandingSprite: {fileID: 21300000, guid: e729927b0ad904b8da1887350473d083, type: 3}
+    StandingSprite: {fileID: 21300000, guid: 2f98be070673f457fb0c5f9c49f25235, type: 3}
   - Name: "\uB9E5\uC2A4"
-    StandingSprite: {fileID: 21300000, guid: e729927b0ad904b8da1887350473d083, type: 3}
+    StandingSprite: {fileID: 21300000, guid: 50299e80c3abf49418a132e636f8885a, type: 3}
   - Name: "\uC5D0\uC774\uB2E4"
     StandingSprite: {fileID: 21300000, guid: e729927b0ad904b8da1887350473d083, type: 3}
 --- !u!1 &324470951
