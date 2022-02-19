@@ -26,6 +26,7 @@ namespace Game.UI
 
         public void Click()
         {
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("button");
             _clickAction(_id);
         }
     }

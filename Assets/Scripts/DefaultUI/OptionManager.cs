@@ -13,6 +13,7 @@ namespace DefaultUI
 
         public void Open()
         {
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("button");
             _active.SetActive(true);
             if (_animation != null && DOTween.IsTweening(_animation))
                 return;

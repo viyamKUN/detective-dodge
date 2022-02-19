@@ -19,6 +19,7 @@ namespace Story
 
         public void SetDialog(string name, string dialog)
         {
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("storyDialog");
             _name.text = name;
             dialog = dialog.Replace("{n}", DefaultSystem.PlayerSaveData.GetPlayer.Name);
             float duration = dialog.Length * 0.1f / _dialogShowingSpeed;

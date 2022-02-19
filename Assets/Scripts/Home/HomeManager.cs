@@ -46,6 +46,7 @@ namespace Home
         /// </summary>
         public void GameStart()
         {
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("title");
             _loader.Load(SceneName.Game);
         }
 

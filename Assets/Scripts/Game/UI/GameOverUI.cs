@@ -17,12 +17,13 @@ namespace Game.UI
         [SerializeField]
         private GameObject _slotsParent;
         [SerializeField]
-        private GameObject _detailObject;
+        private CanvasGroup _detailCanvas;
         [SerializeField]
         private TextMeshProUGUI _detailName;
         [SerializeField]
         private TextMeshProUGUI _detailContents;
         private List<ResultClueSlot> _slots;
+        private object _detailAnimation;
 
         public void Init()
         {
@@ -51,14 +52,20 @@ namespace Game.UI
 
         public void ShowDetails(string clueID)
         {
-            _detailObject.gameObject.SetActive(true);
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("button");
+            _detailCanvas.gameObject.SetActive(true);
+            _detailAnimation = _detailCanvas.DOFade(1, 0.5f).From(0).target;
             _detailName.text = StaticData.ClueStaticData.GetClue(clueID).Name;
             _detailContents.text = StaticData.ClueStaticData.GetClue(clueID).Contents;
         }
 
         public void OffDetails()
         {
-            _detailObject.gameObject.SetActive(false);
+            if (_detailAnimation != null && DOTween.IsTweening(_detailAnimation))
+            {
+                return;
+            }
+            _detailAnimation = _detailCanvas.DOFade(0, 0.5f).OnComplete(() => _detailCanvas.gameObject.SetActive(false)).target;
         }
     }
 }

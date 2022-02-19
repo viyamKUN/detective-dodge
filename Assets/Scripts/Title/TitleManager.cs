@@ -23,6 +23,7 @@ namespace Title
         public void EnterHomeScene()
         {
             _loader.Load(SceneName.Home);
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("title");
         }
 
         /// <summary>
