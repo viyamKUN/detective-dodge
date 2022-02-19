@@ -12,6 +12,11 @@ namespace Title
         [SerializeField]
         private OptionManager _option;
 
+        private void Start()
+        {
+            DG.Tweening.DOTween.Init(true, true, DG.Tweening.LogBehaviour.Default);
+        }
+
         /// <summary>
         /// 홈 화면으로 이동합니다.
         /// </summary>
