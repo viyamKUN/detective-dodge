@@ -50,6 +50,7 @@ namespace Game.Player
         public void KillEnemy(float earnEXP)
         {
             _exp += earnEXP;
+            DefaultSystem.PlayerSaveData.GetPlayer.EXP = _exp;
             UpdateUI();
         }
 

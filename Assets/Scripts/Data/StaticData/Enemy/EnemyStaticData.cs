@@ -41,5 +41,10 @@ namespace Data.StaticData.Enemy
         {
             return _enemyMap[id].ClueDrop;
         }
+
+        public static float GetEXP(int id)
+        {
+            return _enemyMap[id].EXPDrops;
+        }
     }
 }

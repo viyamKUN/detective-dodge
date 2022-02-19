@@ -13,5 +13,6 @@ namespace Game.Enemy
         public float GetSpeed => EnemyStaticData.GetSpeed(_id);
         public float GetPower => EnemyStaticData.GetPower(_id);
         public int GetHP => EnemyStaticData.GetHP(_id);
+        public float GetEXP => EnemyStaticData.GetEXP(_id);
     }
 }

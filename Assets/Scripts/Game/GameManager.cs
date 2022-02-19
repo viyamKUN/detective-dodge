@@ -130,5 +130,10 @@ namespace Game
                 _clueDropManager.GetClue().Spawn(clueID, position);
             }
         }
+
+        public void EarnEXP(float amt)
+        {
+            _controller.KillEnemy(amt);
+        }
     }
 }

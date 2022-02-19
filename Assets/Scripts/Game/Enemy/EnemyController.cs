@@ -65,6 +65,7 @@ namespace Game.Enemy
             if (Random.Range(0, 3) < 1)
             {
                 GameManager.GetInstance.DropClue(_enemy.GetID, transform.position);
+                GameManager.GetInstance.EarnEXP(_enemy.GetEXP);
             }
             gameObject.SetActive(false);
         }
