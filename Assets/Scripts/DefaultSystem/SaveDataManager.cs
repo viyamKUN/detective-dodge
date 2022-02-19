@@ -14,6 +14,7 @@ namespace DefaultSystem
         public static void Init(string name, int storyCount)
         {
             _player = new Player(name, storyCount);
+            Save();
         }
 
         public static void Save()

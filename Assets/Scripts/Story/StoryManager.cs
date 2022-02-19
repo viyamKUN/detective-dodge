@@ -64,6 +64,7 @@ namespace Story
                     break;
                 case "TALK":
                     _dialogSetter.SetDialog(line.Info, line.Contents);
+                    _standingSetter.SetHighlight(line.Info);
                     break;
                 case "SELECT":
                     var nextLine = _scenarioList[_pin + 1];

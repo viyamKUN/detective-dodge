@@ -14,6 +14,7 @@ namespace Game.Player
         private PlayerConfig _config;
         private int _hp;
         private float _exp;
+        private bool _isDead = false;
 
         public Transform PlayerObject => _move.transform;
 
@@ -50,13 +51,17 @@ namespace Game.Player
         public void KillEnemy(float earnEXP)
         {
             _exp += earnEXP;
+            DefaultSystem.PlayerSaveData.GetPlayer.EXP = _exp;
             UpdateUI();
         }
 
         private void Dead()
         {
+            if (_isDead) return;
+            _isDead = true;
             _gameManager.GameOver();
             _move.Dead();
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("dead");
         }
 
         private void UpdateUI()

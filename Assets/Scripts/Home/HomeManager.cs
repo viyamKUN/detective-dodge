@@ -25,10 +25,9 @@ namespace Home
 
             if (!PlayerSaveData.Load())
             {
-                // 이름 입력 이벤트 출력
                 EnterPlayerName("김호걸");
             }
-            // 진행도 표시
+            UpdateProgress();
             _storyButtonsManager.Init();
             _upperUIManager.SetUI(PlayerSaveData.GetPlayer.Name, PlayerSaveData.GetPlayer.EXP);
             DOTween.Init(true, true, LogBehaviour.Default);
@@ -46,17 +45,45 @@ namespace Home
         /// </summary>
         public void GameStart()
         {
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("title");
             _loader.Load(SceneName.Game);
         }
 
-        public void StoryStart()
+        public void StoryStart(int scenarioNumber)
         {
             _loader.Load(SceneName.Story);
+            PlayerSaveData.GetPlayer.ActivateStories[scenarioNumber].DidRead = true;
+            PlayerSaveData.Save();
         }
 
         public void ClueUIOpen()
         {
             _clueUIManager.Open();
+        }
+
+        private void UpdateProgress()
+        {
+            for (int i = 0; i < StoryStaticData.ScenarioCount; i++)
+            {
+                if (PlayerSaveData.GetPlayer.ActivateStories[i].IsActivate)
+                {
+                    continue;
+                }
+                bool isCleared = true;
+                foreach (var id in StoryStaticData.GetRequires(i))
+                {
+                    if (!PlayerSaveData.GetPlayer.ClueList.Contains(id))
+                    {
+                        isCleared = false;
+                        break;
+                    }
+                }
+                if (isCleared)
+                {
+                    PlayerSaveData.GetPlayer.ActivateStories[i].IsActivate = true;
+                }
+            }
+            PlayerSaveData.Save();
         }
     }
 }

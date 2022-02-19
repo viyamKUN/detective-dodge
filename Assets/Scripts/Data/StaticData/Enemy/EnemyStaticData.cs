@@ -17,7 +17,7 @@ namespace Data.StaticData.Enemy
             foreach (var data in dataMaps)
             {
                 _enemyMap.Add((int)data["ID"], new Enemy(
-                    data["Name"], data["HP"], data["Speed"], data["Power"], data["EXPDrops"], data["ItemDrops"], data["ClueDrop"]
+                    data["Name"], data["HP"], data["Speed"], data["Power"], data["EXPDrops"], data["ClueDrop"]
                 ));
             }
         }
@@ -40,6 +40,11 @@ namespace Data.StaticData.Enemy
         public static bool DoesDropClue(int id)
         {
             return _enemyMap[id].ClueDrop;
+        }
+
+        public static float GetEXP(int id)
+        {
+            return _enemyMap[id].EXPDrops;
         }
     }
 }

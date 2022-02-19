@@ -62,13 +62,17 @@ namespace Game.Enemy
         public void Dead()
         {
             _state = Enums.UnitState.Dead;
-            GameManager.GetInstance.DropClue(_enemy.GetID, transform.position);
+            if (Random.Range(0, 3) < 1)
+            {
+                GameManager.GetInstance.DropClue(_enemy.GetID, transform.position);
+                GameManager.GetInstance.EarnEXP(_enemy.GetEXP);
+            }
             gameObject.SetActive(false);
         }
 
         public float GetAttackPower()
         {
-            return _enemy.GetPower;
+            return _enemy.GetPower * 10;
         }
 
         private void OnTriggerEnter2D(Collider2D other)

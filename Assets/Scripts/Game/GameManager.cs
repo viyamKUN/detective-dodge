@@ -84,7 +84,9 @@ namespace Game
             {
                 StopCoroutine(_timer);
             }
-            _uiManager.GameOverUI();
+            _uiManager.GameOverUI(_clueEarnedList);
+            DefaultSystem.PlayerSaveData.GetPlayer.AddClues(_clueEarnedList);
+            DefaultSystem.PlayerSaveData.Save();
         }
 
         private IEnumerator TimeChecker()
@@ -127,6 +129,11 @@ namespace Game
                 var clueID = StaticData.ClueStaticData.GetClueIDByRarity();
                 _clueDropManager.GetClue().Spawn(clueID, position);
             }
+        }
+
+        public void EarnEXP(float amt)
+        {
+            _controller.KillEnemy(amt);
         }
     }
 }

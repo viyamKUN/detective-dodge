@@ -64,6 +64,7 @@ namespace Game.Player
             Vector2 pistolPos = (Vector2)transform.position + _pistolMargin * (_renderer.flipX ? 1 : -1);
             LookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _bulletPool.GetBullet().Spawn(pistolPos, LookDirection);
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("bullet");
         }
 
         private IEnumerator FireCoroutine()

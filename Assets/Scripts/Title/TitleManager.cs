@@ -11,13 +11,26 @@ namespace Title
         private SceneLoader _loader;
         [SerializeField]
         private OptionManager _option;
+        [SerializeField]
+        private NameEnterManaegr _nameEnterManager;
+
+        private void Start()
+        {
+            DG.Tweening.DOTween.Init(true, true, DG.Tweening.LogBehaviour.Default);
+        }
 
         /// <summary>
         /// 홈 화면으로 이동합니다.
         /// </summary>
         public void EnterHomeScene()
         {
+            if (!DefaultSystem.PlayerSaveData.Load())
+            {
+                _nameEnterManager.Open();
+                return;
+            }
             _loader.Load(SceneName.Home);
+            DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("title");
         }
 
         /// <summary>
