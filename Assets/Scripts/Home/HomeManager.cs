@@ -25,7 +25,6 @@ namespace Home
 
             if (!PlayerSaveData.Load())
             {
-                // 이름 입력 이벤트 출력
                 EnterPlayerName("김호걸");
             }
             UpdateProgress();

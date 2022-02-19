@@ -11,6 +11,8 @@ namespace Title
         private SceneLoader _loader;
         [SerializeField]
         private OptionManager _option;
+        [SerializeField]
+        private NameEnterManaegr _nameEnterManager;
 
         private void Start()
         {
@@ -22,6 +24,11 @@ namespace Title
         /// </summary>
         public void EnterHomeScene()
         {
+            if (!DefaultSystem.PlayerSaveData.Load())
+            {
+                _nameEnterManager.Open();
+                return;
+            }
             _loader.Load(SceneName.Home);
             DefaultSystem.EffectSoundSystem.GetInstance?.PlayEffect("title");
         }
