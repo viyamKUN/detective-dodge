@@ -45,8 +45,8 @@ namespace Story
                 SetSlot(_standingSlots[1], members[0]);
                 SetSlot(_standingSlots[2], members[1]);
                 _names[0] = string.Empty;
-                _names[1] = members[1];
-                _names[2] = members[2];
+                _names[1] = members[0];
+                _names[2] = members[1];
             }
         }
 
