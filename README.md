@@ -12,6 +12,12 @@
 - [삼국지](https://github.com/hurss/fonts)
 - [너만을 비춤체](https://www.yspotlight.co.kr/brand/font?tabNo=0)
 
+## 사용된 음악
+
+- 홈 화면 BGM : Fukagawa
+- 인게임 화면 BGM : shimtone
+- 스토리 화면 BGM : Fukagawa
+
 ## 플러그인
 
 DOTweenPro 플러그인을 레퍼지토리에서 제거하였습니다. 정상적인 프로젝트 실행을 위해서는 해당 플러그인이 필요합니다.
