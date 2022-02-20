@@ -48,9 +48,7 @@ MonoBehaviour:
   _clips:
   - {fileID: 8300000, guid: 24cc2f39ec2534093aad562dd3a64b0c, type: 3}
   - {fileID: 8300000, guid: 9552b89aa1b9549e4b9d170a3c0ac94b, type: 3}
-  - {fileID: 8300000, guid: 1628016c5d213481ca56846853940c2b, type: 3}
   - {fileID: 8300000, guid: 78d511f72bea0405eb8868663922f8f5, type: 3}
-  - {fileID: 8300000, guid: 789de5e8ead304003ad3e60f071d1352, type: 3}
   - {fileID: 8300000, guid: 1467e9f2e102747acb4d9e785fd8d299, type: 3}
   - {fileID: 8300000, guid: 47a90b0969c0644e99db375a66daacdf, type: 3}
 --- !u!82 &2409417558369145501
