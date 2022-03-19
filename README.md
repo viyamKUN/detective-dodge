@@ -10,6 +10,7 @@
 ## 후기 및 게임설명
 
 [프로그래머 블로그](https://viyamkun.github.io/posts/gamejam-dodge-story-game/)
+[시나리오 기획자 블로그](https://m.blog.naver.com/dustflo/222652274035)
 
 ## 사용된 폰트
 
